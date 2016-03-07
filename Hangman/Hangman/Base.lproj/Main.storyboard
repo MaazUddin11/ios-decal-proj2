@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Start Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartScreenViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOz-vN-Abu">
+                                <rect key="frame" x="263" y="20" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj6-Hc-iph">
+                                <rect key="frame" x="263" y="285" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <segue destination="kcT-pl-2bB" kind="show" id="hCg-3l-Hsf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click Below To Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-kf-9Cg">
+                                <rect key="frame" x="189" y="239" width="222" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fj6-Hc-iph" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CKP-9U-fHy"/>
+                            <constraint firstItem="fj6-Hc-iph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JjM-AM-7Vs"/>
+                            <constraint firstItem="fj6-Hc-iph" firstAttribute="top" secondItem="hHQ-kf-9Cg" secondAttribute="bottom" constant="8" id="KyI-tZ-IWE"/>
+                            <constraint firstItem="HOz-vN-Abu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RY5-Ty-rSJ"/>
+                            <constraint firstItem="HOz-vN-Abu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tfu-zy-CtL"/>
+                            <constraint firstItem="hHQ-kf-9Cg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2o-lJ-KbA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-126" y="358"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="tSS-SD-NT5">
+            <objects>
+                <viewController id="kcT-pl-2bB" customClass="GameViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsQ-7Q-7gF"/>
+                        <viewControllerLayoutGuide type="bottom" id="hs3-rt-T2v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aEU-gE-YET">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znY-eT-6pc">
+                                <rect key="frame" x="20" y="403" width="280" height="30"/>
+                                <state key="normal" title="Correct"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKx-l5-Mji">
+                                <rect key="frame" x="252" y="352" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Qfv-8f-t39">
+                                <rect key="frame" x="180" y="20" width="240" height="228"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="_  _  _  _  _  _  _  _  _  _  _  _  _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-lM-IVD">
+                                <rect key="frame" x="0.0" y="289" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-55-39T">
+                                <rect key="frame" x="308" y="403" width="272" height="30"/>
+                                <state key="normal" title="Incorrect"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m9r-lM-IVD" firstAttribute="centerY" secondItem="aEU-gE-YET" secondAttribute="centerY" id="3DJ-j9-NPY"/>
+                            <constraint firstItem="IMR-55-39T" firstAttribute="top" secondItem="QKx-l5-Mji" secondAttribute="bottom" constant="21" id="79I-XK-Cnn"/>
+                            <constraint firstItem="m9r-lM-IVD" firstAttribute="top" secondItem="Qfv-8f-t39" secondAttribute="bottom" constant="41" id="8sZ-eb-Zm8"/>
+                            <constraint firstItem="Qfv-8f-t39" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="T3K-j8-okP"/>
+                            <constraint firstItem="znY-eT-6pc" firstAttribute="top" secondItem="QKx-l5-Mji" secondAttribute="bottom" constant="21" id="X4O-T8-iKk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="znY-eT-6pc" secondAttribute="leading" id="oSa-3f-Yc5"/>
+                            <constraint firstItem="QKx-l5-Mji" firstAttribute="top" secondItem="m9r-lM-IVD" secondAttribute="bottom" constant="42" id="u3f-hC-i0T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IMR-55-39T" secondAttribute="trailing" id="u8h-jN-lLX"/>
+                            <constraint firstItem="QKx-l5-Mji" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="vwS-Ml-kzB"/>
+                            <constraint firstItem="m9r-lM-IVD" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="yxs-xr-Ciq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVE-dI-4il" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1.gif" width="100" height="100"/>
+    </resources>
 </document>
