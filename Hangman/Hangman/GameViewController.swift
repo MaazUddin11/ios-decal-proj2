@@ -9,13 +9,30 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    @IBOutlet var guessedLetterFromTextField: UITextField!
+    @IBOutlet var hangmanImage: UIImageView!
+    @IBOutlet weak var guessButton: UIButton!
+    @IBOutlet weak var displayedPhrase: UILabel!
+    
+    let hangmanImagesArray: [String] = ["hangWizard1", "hangWizard2", "hangWizard3", "hangWizard4", "hangWizard5", "hangWizard6", "hangWizard7"]
+    var wronglyGuessedLetters: [String] = []
+    var stringOfCorrectLettersAndUnderscores: String = ""
+    var phraseThatPlayerMustGuessLettersOf: String = ""
+    var numberOfWrongGuesses = 0
+    var phraseLength = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        self.view.backgroundColor = UIImageView(image: "matrixBackground.jpg")
         let hangmanPhrases = HangmanPhrases()
         let phrase = hangmanPhrases.getRandomPhrase()
+        phraseThatPlayerMustGuessLettersOf = phrase
+        phraseLength = phraseThatPlayerMustGuessLettersOf.characters.count
+        hangmanImage.image = UIImage(named: hangmanImagesArray[numberOfWrongGuesses])
+        updateUILabel()
         print(phrase)
     }
 
@@ -35,6 +52,26 @@ class GameViewController: UIViewController {
         return true
     }
     
+    @IBAction func whenGuessIsClicked(sender: AnyObject) {
+        if numberOfWrongGuesses != 6 {
+            numberOfWrongGuesses += 1
+            hangmanImage.image = UIImage(named: hangmanImagesArray[numberOfWrongGuesses])
+        }
+    }
+    
+    func updateUILabel() {
+        for char in phraseThatPlayerMustGuessLettersOf.characters {
+//            if contains(phraseThatPlayerMustGuessLettersOf.lowercaseString, guessedLetterFromTextField.text!.lowercaseString) {
+//                stringOfCorrectLettersAndUnderscores += guessedLetterFromTextField.text!
+//            }
+            if char == " " {
+                stringOfCorrectLettersAndUnderscores += "  "
+            } else {
+                stringOfCorrectLettersAndUnderscores += "- "
+            }
+        }
+        displayedPhrase.text = stringOfCorrectLettersAndUnderscores
+    }
 
     /*
     // MARK: - Navigation

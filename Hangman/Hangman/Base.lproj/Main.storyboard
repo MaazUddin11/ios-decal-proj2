@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Start Screen View Controller-->
@@ -15,34 +14,39 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOz-vN-Abu">
-                                <rect key="frame" x="263" y="20" width="74" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="harryPotterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SEL-o6-hKD">
+                                <rect key="frame" x="-1" y="0.0" width="321" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click Below To Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-kf-9Cg">
+                                <rect key="frame" x="49" y="107" width="222" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.99920139060000002" blue="0.027517236359999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj6-Hc-iph">
-                                <rect key="frame" x="263" y="285" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj6-Hc-iph">
+                                <rect key="frame" x="122" y="153" width="75" height="30"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
-                                    <segue destination="kcT-pl-2bB" kind="show" id="hCg-3l-Hsf"/>
+                                    <segue destination="kcT-pl-2bB" kind="modal" id="hCg-3l-Hsf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click Below To Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-kf-9Cg">
-                                <rect key="frame" x="189" y="239" width="222" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hanggy Potter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOz-vN-Abu">
+                                <rect key="frame" x="105" y="20" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.99920139060000002" blue="0.027517236359999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fj6-Hc-iph" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CKP-9U-fHy"/>
+                            <constraint firstItem="SEL-o6-hKD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Gs-VL-CqI"/>
+                            <constraint firstItem="SEL-o6-hKD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HsL-Ch-gwd"/>
                             <constraint firstItem="fj6-Hc-iph" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JjM-AM-7Vs"/>
-                            <constraint firstItem="fj6-Hc-iph" firstAttribute="top" secondItem="hHQ-kf-9Cg" secondAttribute="bottom" constant="8" id="KyI-tZ-IWE"/>
+                            <constraint firstItem="fj6-Hc-iph" firstAttribute="top" secondItem="hHQ-kf-9Cg" secondAttribute="bottom" constant="8" id="LrD-1y-zPL"/>
+                            <constraint firstItem="hHQ-kf-9Cg" firstAttribute="top" secondItem="HOz-vN-Abu" secondAttribute="bottom" constant="66.5" id="OUq-B5-9Aq"/>
                             <constraint firstItem="HOz-vN-Abu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RY5-Ty-rSJ"/>
                             <constraint firstItem="HOz-vN-Abu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tfu-zy-CtL"/>
                             <constraint firstItem="hHQ-kf-9Cg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2o-lJ-KbA"/>
@@ -51,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="358"/>
+            <point key="canvasLocation" x="-68" y="338"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tSS-SD-NT5">
@@ -61,54 +65,61 @@
                         <viewControllerLayoutGuide type="top" id="tsQ-7Q-7gF"/>
                         <viewControllerLayoutGuide type="bottom" id="hs3-rt-T2v"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aEU-gE-YET">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" id="aEU-gE-YET">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znY-eT-6pc">
-                                <rect key="frame" x="20" y="403" width="280" height="30"/>
-                                <state key="normal" title="Correct"/>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="harryPotterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-1w-1nV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Letter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKx-l5-Mji">
-                                <rect key="frame" x="252" y="352" width="97" height="30"/>
+                                <rect key="frame" x="112" y="454" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Qfv-8f-t39">
-                                <rect key="frame" x="180" y="20" width="240" height="228"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="_  _  _  _  _  _  _  _  _  _  _  _  _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-lM-IVD">
-                                <rect key="frame" x="0.0" y="289" width="600" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-lM-IVD">
+                                <rect key="frame" x="0.0" y="414" width="320" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-55-39T">
-                                <rect key="frame" x="308" y="403" width="272" height="30"/>
-                                <state key="normal" title="Incorrect"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="228" translatesAutoresizingMaskIntoConstraints="NO" id="Qfv-8f-t39">
+                                <rect key="frame" x="40" y="20" width="240" height="228"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-B0-wmc">
+                                <rect key="frame" x="139" y="492" width="43" height="30"/>
+                                <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="whenGuessIsClicked:" destination="kcT-pl-2bB" eventType="primaryActionTriggered" id="avv-Ti-zkx"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m9r-lM-IVD" firstAttribute="centerY" secondItem="aEU-gE-YET" secondAttribute="centerY" id="3DJ-j9-NPY"/>
-                            <constraint firstItem="IMR-55-39T" firstAttribute="top" secondItem="QKx-l5-Mji" secondAttribute="bottom" constant="21" id="79I-XK-Cnn"/>
-                            <constraint firstItem="m9r-lM-IVD" firstAttribute="top" secondItem="Qfv-8f-t39" secondAttribute="bottom" constant="41" id="8sZ-eb-Zm8"/>
+                            <constraint firstItem="ebK-1w-1nV" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="8UM-xf-rMO"/>
+                            <constraint firstItem="kYM-B0-wmc" firstAttribute="top" secondItem="QKx-l5-Mji" secondAttribute="bottom" constant="8" id="DOD-Mg-eOp"/>
+                            <constraint firstItem="QKx-l5-Mji" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="Gc9-ml-tjO"/>
                             <constraint firstItem="Qfv-8f-t39" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="T3K-j8-okP"/>
-                            <constraint firstItem="znY-eT-6pc" firstAttribute="top" secondItem="QKx-l5-Mji" secondAttribute="bottom" constant="21" id="X4O-T8-iKk"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="znY-eT-6pc" secondAttribute="leading" id="oSa-3f-Yc5"/>
-                            <constraint firstItem="QKx-l5-Mji" firstAttribute="top" secondItem="m9r-lM-IVD" secondAttribute="bottom" constant="42" id="u3f-hC-i0T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IMR-55-39T" secondAttribute="trailing" id="u8h-jN-lLX"/>
-                            <constraint firstItem="QKx-l5-Mji" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="vwS-Ml-kzB"/>
-                            <constraint firstItem="m9r-lM-IVD" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="yxs-xr-Ciq"/>
+                            <constraint firstItem="ebK-1w-1nV" firstAttribute="centerY" secondItem="aEU-gE-YET" secondAttribute="centerY" id="b9k-uF-uay"/>
+                            <constraint firstItem="m9r-lM-IVD" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="v08-Qg-fTz"/>
+                            <constraint firstItem="kYM-B0-wmc" firstAttribute="centerX" secondItem="aEU-gE-YET" secondAttribute="centerX" id="wcV-LY-Fnj"/>
+                            <constraint firstItem="QKx-l5-Mji" firstAttribute="top" secondItem="m9r-lM-IVD" secondAttribute="bottom" constant="19" id="wqH-HL-eWQ"/>
+                            <constraint firstItem="hs3-rt-T2v" firstAttribute="top" secondItem="kYM-B0-wmc" secondAttribute="bottom" constant="46" id="zmS-Wz-JHN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayedPhrase" destination="m9r-lM-IVD" id="Sbr-3g-02u"/>
+                        <outlet property="guessButton" destination="kYM-B0-wmc" id="vra-J6-tbK"/>
+                        <outlet property="guessedLetterFromTextField" destination="QKx-l5-Mji" id="lbZ-tP-bq6"/>
+                        <outlet property="hangmanImage" destination="Qfv-8f-t39" id="MDZ-UH-bQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVE-dI-4il" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540" y="358"/>
+            <point key="canvasLocation" x="288" y="338"/>
         </scene>
     </scenes>
     <resources>
-        <image name="hangman1.gif" width="100" height="100"/>
+        <image name="harryPotterBackground" width="610" height="1082"/>
     </resources>
 </document>
