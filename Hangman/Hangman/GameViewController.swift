@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
         phraseThatPlayerMustGuessLettersOf = phrase
         phraseLength = phraseThatPlayerMustGuessLettersOf.characters.count
         hangmanImage.image = UIImage(named: hangmanImagesArray[numberOfWrongGuesses])
-        updateUILabel()
+        initializeUILabel()
         print(phrase)
     }
 
@@ -57,13 +57,24 @@ class GameViewController: UIViewController {
             numberOfWrongGuesses += 1
             hangmanImage.image = UIImage(named: hangmanImagesArray[numberOfWrongGuesses])
         }
+        updateUILabel()
+    }
+    
+    func initializeUILabel() {
+        for char in phraseThatPlayerMustGuessLettersOf.characters {
+            if char == " " {
+                stringOfCorrectLettersAndUnderscores += "  "
+            } else {
+                stringOfCorrectLettersAndUnderscores += "- "
+            }
+        }
     }
     
     func updateUILabel() {
         for char in phraseThatPlayerMustGuessLettersOf.characters {
-//            if contains(phraseThatPlayerMustGuessLettersOf.lowercaseString, guessedLetterFromTextField.text!.lowercaseString) {
-//                stringOfCorrectLettersAndUnderscores += guessedLetterFromTextField.text!
-//            }
+            if String(char) == guessedLetterFromTextField.text!.lowercaseString {
+                stringOfCorrectLettersAndUnderscores += guessedLetterFromTextField.text!
+            }
             if char == " " {
                 stringOfCorrectLettersAndUnderscores += "  "
             } else {
@@ -71,6 +82,7 @@ class GameViewController: UIViewController {
             }
         }
         displayedPhrase.text = stringOfCorrectLettersAndUnderscores
+        print(guessedLetterFromTextField.text)
     }
 
     /*
